@@ -1,0 +1,10 @@
+.task {
+    margin-bottom: 10px;
+}
+
+.task span {
+    text-align: left;
+    width: 65%;
+    white-space: pre-line;
+    word-wrap: break-word;
+}

@@ -1,0 +1,35 @@
+.currentTask {
+    margin-top: 45px;
+    min-height: 452px;
+    background-color: #ECE8E8;
+    width: 300px;
+    border-radius: 25px;
+}
+
+.currentTask__head {
+    background-color: #61D0FF;
+    border-radius: 25px 25px 0px 0px;
+}
+.currentTask__list {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.task {
+    background-color: silver;
+    width: 251px;
+    height: 59px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+}
+
+.task-icons {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+}
