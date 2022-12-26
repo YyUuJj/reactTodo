@@ -6,11 +6,11 @@ const CreateTask = (props) => {
 
     const {addTask, changeName} = props;
     return (
-        <form>
+        <form onSubmit={addTask} name='myForm'>
             <input type='text'
             placeholder="Введите наименование задачи"
             onChange={changeName}/>
-            <button onClick={addTask}>Добавить</button>
+            <button>Добавить</button>
         </form>
     )
 };

@@ -1,4 +1,4 @@
-.currentTask {
+.finishedTask {
     display: flex;
     flex-direction: column;
     min-height: 452px;
@@ -7,14 +7,14 @@
     border-radius: 25px;
 }
 
-.currentTask__head {
+.finishedTask__head {
     height: 90px;
     width: 100%;
     padding-top: 0;
-    background-color: #60b7f1;
+    background-color: #f3697b;
     border-radius: 25px 25px 0px 0px;
 }
-.currentTask__list {
+.finishedTask__list {
     margin-top: 22px;
     display: flex;
     flex-direction: column;
@@ -37,3 +37,4 @@
     flex-direction: row;
     width: auto;
 }
+

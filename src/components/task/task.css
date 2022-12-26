@@ -8,3 +8,7 @@
     white-space: pre-line;
     word-wrap: break-word;
 }
+
+img:hover {
+    background-color: black;
+}

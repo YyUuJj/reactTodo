@@ -2,11 +2,13 @@ import "./current-task.css";
 import Task from "../task/task";
 
 
-const CurrentTask = ({data}) => {
+const CurrentTask = ({data, finishTask}) => {
     const elements = data.map(item=>{
-        return (
-            <Task name={item.name} key={item.id}/>
-        )
+        if(item.status === 'current'){
+            return (
+                <Task name={item.name} key={item.id} finishTask={() => finishTask(item.id)}/>
+            )
+        }
     })
     return (
         <div className="currentTask">
