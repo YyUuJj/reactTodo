@@ -1,4 +1,6 @@
-import { Component } from 'react';
+import { Component} from 'react';
+import React from 'react';
+
 import './App.css';
 import CreateTask from './components/create-task/create-task';
 import CurrentTask from './components/current-task/current-task';

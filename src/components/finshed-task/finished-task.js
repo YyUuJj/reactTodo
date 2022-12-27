@@ -1,3 +1,5 @@
+import React from "react";
+
 import "./finished-task.css";
 import Task from "../task/task";
 
