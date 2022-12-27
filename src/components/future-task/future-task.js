@@ -2,11 +2,11 @@ import "./future-task.css";
 import Task from "../task/task";
 
 
-const FutureTask = ({data}) => {
+const FutureTask = ({data,deleteTask, backTask}) => {
     const elements = data.map(item=>{
         if(item.status === 'future'){
             return (
-                <Task name={item.name} key={item.id} status={item.status}/>
+                <Task name={item.name} key={item.id} status={item.status} deleteTask={()=> deleteTask(item.id)} backTask={() => backTask(item.id)}/>
             )
         }
     })

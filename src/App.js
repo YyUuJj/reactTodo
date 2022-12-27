@@ -66,6 +66,17 @@ class App extends Component {
     })
   } 
 
+  backTask = (id) => {
+    this.setState(({tasks}) => ({
+      tasks: tasks.map(item => {
+          if (item.id === id) {
+              return {...item, status: "current"};
+          }
+          return item;
+      })
+    }));
+};
+
   rescheduleTask = (id) => {
     this.setState(({tasks}) => ({
       tasks: tasks.map(item => {
@@ -87,8 +98,8 @@ class App extends Component {
           changeName={this.changeName}/>
         <div className='app_list'>
           <CurrentTask data={this.state.tasks} finishTask={this.finishTask} deleteTask={this.deleteTask} rescheduleTask={this.rescheduleTask}/>
-          <Finished data={this.state.tasks}/>
-          <FutureTask data={this.state.tasks}/>
+          <Finished data={this.state.tasks} deleteTask={this.deleteTask} backTask={this.backTask}/>
+          <FutureTask data={this.state.tasks} deleteTask={this.deleteTask} backTask={this.backTask}/>
         </div>
       </div>
     )

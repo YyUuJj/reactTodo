@@ -2,11 +2,11 @@ import "./finished-task.css";
 import Task from "../task/task";
 
 
-const FinishedTask = ({data, finishTask}) => {
+const FinishedTask = ({data, deleteTask, backTask}) => {
     const elements = data.map(item=>{
         if(item.status === 'finished'){
             return (
-                <Task name={item.name} key={item.id} status={item.status}/>
+                <Task name={item.name} key={item.id} status={item.status} deleteTask={()=> deleteTask(item.id)} backTask={() => backTask(item.id)}/>
             )
         }
     })
