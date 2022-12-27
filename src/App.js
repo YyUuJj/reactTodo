@@ -38,7 +38,6 @@ class App extends Component {
   }
 
   finishTask = (id) => {
-    alert("Задача завершена!" + id);
     this.setState(({tasks}) => ({
       tasks: tasks.map(item => {
           if (item.id === id) {
@@ -46,9 +45,17 @@ class App extends Component {
           }
           return item;
       })
-    }))
-
+    }));
   }
+
+  deleteTask = (id) => {
+    this.setState(({tasks}) => {
+      return {
+        tasks: tasks.filter(item => item.id !== id )
+      }
+    })
+  }
+
   
   changeName = (e) => {
     this.setState({
@@ -64,7 +71,7 @@ class App extends Component {
           addTask={this.addTask}
           changeName={this.changeName}/>
         <div className='app_list'>
-          <CurrentTask data={this.state.tasks} finishTask={this.finishTask}/>
+          <CurrentTask data={this.state.tasks} finishTask={this.finishTask} deleteTask={this.deleteTask}/>
           <Finished data={this.state.tasks}/>
         </div>
       </div>
