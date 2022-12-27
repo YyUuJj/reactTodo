@@ -6,14 +6,14 @@ const FinishedTask = ({data, finishTask}) => {
     const elements = data.map(item=>{
         if(item.status === 'finished'){
             return (
-                <Task name={item.name} key={item.id}/>
+                <Task name={item.name} key={item.id} status={item.status}/>
             )
         }
     })
     return (
         <div className="finishedTask">
             <div className="finishedTask__head">
-                <h1>Задачи</h1>
+                <h1>Завершенные</h1>
             </div>
             <div className="finishedTask__list">
                 {elements}

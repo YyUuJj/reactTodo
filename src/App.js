@@ -3,17 +3,20 @@ import './App.css';
 import CreateTask from './components/create-task/create-task';
 import CurrentTask from './components/current-task/current-task';
 import Finished from './components/finshed-task/finished-task';
+import FutureTask from './components/future-task/future-task';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       tasks: [
-        {id: 1, name: "test", status: "finished"}
+        {id: 1, name: "test", status: "current"},
+        {id: 2, name: "test2", status: "finished"},
+        {id: 3, name: "test3", status: "future"}
       ],
       nameValue: ""
     };
-    this.maxId = 2;
+    this.maxId = this.state.tasks.length+1;
   }
 
   addTask = (e) => {
@@ -63,6 +66,18 @@ class App extends Component {
     })
   } 
 
+  rescheduleTask = (id) => {
+    this.setState(({tasks}) => ({
+      tasks: tasks.map(item => {
+          if (item.id === id) {
+              return {...item, status: "future"};
+          }
+          return item;
+      })
+    }));
+  }
+
+
   render () {
     return(
       <div className="App">
@@ -71,8 +86,9 @@ class App extends Component {
           addTask={this.addTask}
           changeName={this.changeName}/>
         <div className='app_list'>
-          <CurrentTask data={this.state.tasks} finishTask={this.finishTask} deleteTask={this.deleteTask}/>
+          <CurrentTask data={this.state.tasks} finishTask={this.finishTask} deleteTask={this.deleteTask} rescheduleTask={this.rescheduleTask}/>
           <Finished data={this.state.tasks}/>
+          <FutureTask data={this.state.tasks}/>
         </div>
       </div>
     )

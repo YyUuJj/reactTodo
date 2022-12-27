@@ -5,6 +5,7 @@
 .app_list {
   display: flex;
   justify-content: space-around;
+  margin-top: 50px;
 }
 
 .App-logo {
