@@ -1,0 +1,19 @@
+@import "../../variable.scss";
+
+.finishedTask {
+    @include list;
+
+    &__head {
+        @include list_head;
+        background-color: #f3697b;
+    }
+
+    &__list {
+        @include list_prop;
+    }
+
+}
+
+
+
+

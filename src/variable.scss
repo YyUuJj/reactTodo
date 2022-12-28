@@ -1,0 +1,26 @@
+$list-color: #ffffff;
+$list-height: 452px;
+$task-color: #d9ff9b;
+
+@mixin list {
+    display: flex;
+    flex-direction: column;
+    min-height: $list-height;
+    background-color: $list-color;
+    width: 300px;
+    border-radius: 25px;
+}
+
+@mixin list_head {
+    height: 90px;
+    width: 100%;
+    padding-top: 0;
+    border-radius: 25px 25px 0px 0px;
+}
+
+@mixin list_prop {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

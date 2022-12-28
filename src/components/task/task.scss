@@ -1,0 +1,29 @@
+@import "../../variable.scss";
+
+
+.task {
+    margin-bottom: 10px;
+
+    background-color: $task-color;
+    width: 251px;
+    height: 59px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+
+    &-icons {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+    }
+
+    span {
+        text-align: left;
+        width: 65%;
+        white-space: pre-line;
+        word-wrap: break-word;
+    }
+    
+}

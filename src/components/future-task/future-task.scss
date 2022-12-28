@@ -1,0 +1,15 @@
+@import "../../variable.scss";
+
+.futureTask {
+    @include list;
+
+    &__head {
+        @include list_head;
+        background-color: #69f3dc;
+    }
+
+    &__list {
+        @include list_prop;
+    }
+
+}

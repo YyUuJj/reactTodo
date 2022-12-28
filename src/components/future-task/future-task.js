@@ -1,5 +1,5 @@
 import React from "react";
-import "./future-task.css";
+import "./future-task.scss";
 import Task from "../task/task";
 
 
